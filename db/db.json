@@ -1,6 +1,7 @@
 [
     {
-        "title":"Test Title",
+        "id": "1",
+        "title":"My Christmas List",
         "text":"Test text"
     }
 ]
