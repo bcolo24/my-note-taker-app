@@ -30,7 +30,7 @@ api.post('/api/notes', (req, res) => {
             id: uuid(),
         };
 
-        readAndAppend(newNote, './db/db.json');
+        readAndAppend(newNote, '../db/db.json');
 
         const response = {
             status: 'success',
