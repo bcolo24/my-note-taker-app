@@ -182,7 +182,26 @@ const renderNoteList = async (notes) => {
 };
 
 // Gets notes from the db and renders them to the sidebar
-const getAndRenderNotes = () => getNotes().then(renderNoteList);
+// const getAndRenderNotes = () => getNotes().then(renderNoteList);
+const getAndRenderNotes = () => {
+  console.log('Attempting to fetch notes...');
+  fetch('/api/notes')
+    .then((response) => {
+      console.log('Fetch response:', response);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log('Parsed JSON data:', data);
+      renderNoteList(data);
+    })
+    .catch((error) => {
+      console.error('Error fetching notes:', error);
+    });
+};
+
 
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
