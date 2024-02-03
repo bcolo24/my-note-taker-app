@@ -29,14 +29,13 @@ app.get('/feedback', (req, res) =>{
     next(err); // Pass the error to the error handler
   }
 });
-//   res.sendFile(path.join(__dirname, '../public/notes.html'))
-// );
+
 // GET Route for homepage
 app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, '../public/index.html'))
 );
 
-// Error handler
+// In case of error
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');

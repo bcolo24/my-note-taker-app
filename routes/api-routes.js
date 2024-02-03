@@ -15,15 +15,14 @@ api.get('/api/notes', async (req, res) => {
 
 // POST route for submitting notes
 api.post('/api/notes', (req, res) => {
-    // Log that a POST request was received
     console.info(`${req.method} request received to submit notes`);
 
-    // Destructuring assignment for the items in req.body
+    // assignment for the items in req.body
     const { text, title } = req.body;
 
     // If all the required properties are present
-    if ( text && title ) {
-        // Variable for the object we will save
+    if (text && title) {
+        // Variable for the object will save
         const newNote = {
             title,
             text,
