@@ -10,7 +10,7 @@ const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
 api.get('/api/notes', async (req, res) => {
     console.info(`${req.method} request received for notes`);
 
-    readFromFile('../db/db.json').then((data) => res.json(JSON.parse(data)));
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
 // POST route for submitting notes
@@ -30,7 +30,7 @@ api.post('/api/notes', (req, res) => {
             id: uuid(),
         };
 
-        readAndAppend(newNote, '../db/db.json');
+        readAndAppend(newNote, './db/db.json');
 
         const response = {
             status: 'success',
