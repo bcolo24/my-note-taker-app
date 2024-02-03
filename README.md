@@ -35,6 +35,9 @@
   ## Usage
 
   To use this app, open the integrated terminal and enter "npm i". Then, enter "node server.js" in the terminal and open the link. From there, you'll be redirected to the app and able to add and save notes. After a note is created, it will appear on the left and you have the option to edit or create a new note.
+  
+  Or, use the link for Heroku and access the completed app there! You will press the "Get Started" button to begin creating notes!
+  https://bethanys-express-note-taker-4f2eccaaee1e.herokuapp.com/
 
   ![Screenshot of site](./public/assets/Images/localhost_3001_notes%20(1).png)
 
